@@ -1,0 +1,9 @@
+<div class="mapdetails-wrapper">
+    <span class="legend-title ">MAP LEGENDS: </span>
+    <div class="d-flex legends-wrapper">
+        <div *ngFor="let category of categoryMap" class="legend">
+            <div class="color-span" style="background:{{category.color}}"></div>
+            <span class="category-text">{{category.key}}</span>
+        </div>
+    </div>
+</div>

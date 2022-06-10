@@ -1,0 +1,39 @@
+.mapdetails-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: wrap;
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 15px;
+    height:auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px 3px #00000010;
+}
+
+.legend-title{
+    font-weight: 600;
+    margin-bottom:0.5em;
+}
+
+.category-text{
+    font-size:0.85em;
+}
+
+.legends-wrapper{
+    flex-wrap: wrap;
+    flex-flow:auto;
+}
+
+.legend{
+    margin-left:0.5em;
+    display: flex;
+    height:2em;
+}
+
+.color-span{
+    width:1em;
+    height:1em;
+    border-radius: 5px;
+    margin-right:0.5em; 
+}

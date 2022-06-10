@@ -1,0 +1,22 @@
+<div class="header-bar">
+    <span class="filter-title col-3">Filter Map: </span>
+    <form [formGroup]="form" (ngSubmit)="submitForm()" class="d-flex align-items-center w-100">
+            <div class="d-flex align-items-center justify-content-between input-fields-wrapper w-100">
+                <select formControlName="stateForm" class="form-control">
+                    <option [value]="null" selected="selected">All States</option>
+                    <option *ngFor="let state of stateFormList" [value]="state.code">{{state.name}}</option>
+                </select>
+
+                <select formControlName="categoryForm" class="form-control">
+                    <option [value]="null" selected="selected">All Plant Types</option>
+                    <option *ngFor="let category of categoryFormList" [value]="category.key">{{category.val}}</option>
+                </select>
+                <div class="d-flex align-items-center top-n-input-wrapper w-100">
+                    <span class="top-n-title">Top: </span>
+                    <input class="top-n-input form-control" type="number" formControlName="topNForm" name="top-n-input" placeholder="e.g. 10" /> <span>&nbsp;Plants</span>
+                </div>
+                <button class="btn btn-primary show-plants-btn" type="submit">Show Plants</button>
+                <button class="btn btn-outline-danger reset-fields-btn" type="reset"><span class="glyphicon glyphicon-refresh"></span>↻</button>
+            </div>
+    </form>
+</div>

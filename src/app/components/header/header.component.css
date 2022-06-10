@@ -1,0 +1,81 @@
+.header-bar{
+    background: #ffffff;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    align-items: center;
+    box-shadow: 0 0 10px 3px #00000010;
+    padding: 2rem;
+}
+
+.filter-title{
+    font-weight: 600;
+    font-size: 1.25em;
+    width: 100%;
+}
+
+input, select{
+    border: 0;
+    border-bottom: 2px solid #24a965;
+    border-radius: 0;
+    color: #24a965;
+    font-weight: 600;
+}
+
+.input-fields-wrapper{
+    column-gap: 2rem;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.show-plants-btn{
+    width: 100%;
+    border-radius: 40px;
+    padding: 0.5em;
+    color: #ffffff;
+    background: #25d15b;
+    border: 1px solid #31e76b;
+    background: linear-gradient(79deg, rgba(37,209,91,1) 0%, #24a965 100%);
+    transition: transform ease-in-out 0.2s;
+    margin-top:2rem;
+}
+
+.show-plants-btn:hover{
+    transform:scale(1.035);
+}
+
+
+.top-n-input::placeholder{
+    color: #ccc;
+    font-weight: 500;
+}
+
+.reset-fields-btn{
+    border-radius: 30px;
+}
+
+
+@media(min-width: 992px){
+    .header-bar{
+        height: 5rem;
+        padding: 0 2rem;
+        margin: 0 1rem;
+        flex-direction: row;
+        column-gap:10em;
+    }
+
+    .filter-title{
+        width: auto;
+    }
+
+    .input-fields-wrapper{
+        flex-direction:row;
+    }
+
+    .show-plants-btn{
+        width: 60%;
+        margin-top:0;
+    }
+    
+}

@@ -1,0 +1,30 @@
+<div class="content-box top-generation-details-wrapper">
+    <span class="generation-title">{{title}}</span>
+    <table class="table table-striped">
+        <thead class="green-text">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Plant Name</th>
+            <th scope="col">State</th>
+            <th scope="col">Category</th>
+            <th scope="col">Net Generation</th>
+            <th scope="col">Percent Generation</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let plant of plantsData; let i=index;" class="plant-row">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{plant['PNAME']}}</td>
+                <td>{{plant['PSTATABB']}}</td>
+                <td>{{plant['PLFUELCT']}}</td>
+                <td>{{plant['val']}}</td>
+                <td>{{plant['percent'] }}</td>
+            </tr>
+
+          <tr>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
