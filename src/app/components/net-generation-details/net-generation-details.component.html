@@ -1,0 +1,14 @@
+<div  class="content-box">
+    <span class="generation-title">Net Generation Absolute</span>
+    <div *ngIf="plantId; else initBlock" class="chart-canvas-wrapper">
+        <canvas id="canvasBar" class="bar-chart-canvas">{{barChart}}</canvas>
+    </div>
+</div>
+
+
+<ng-template #initBlock>
+    <div class="init-block">
+        <span class="green-text">Use the Map to view more details.</span>  
+        <div class="lds-facebook"><div></div><div></div><div></div></div>
+    </div>
+</ng-template>

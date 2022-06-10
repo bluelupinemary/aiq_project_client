@@ -1,0 +1,13 @@
+.top-generation-details-wrapper{
+    max-height: 33rem;
+    overflow: auto;
+    padding:1rem 2rem;
+}
+.generation-title{
+    margin-bottom: 1rem;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #e5f6ef; 
+}

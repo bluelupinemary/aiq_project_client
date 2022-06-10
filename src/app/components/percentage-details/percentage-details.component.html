@@ -1,0 +1,24 @@
+<div class="content-box">
+    <span class="generation-title">Net Generation Percentage</span>
+    <div *ngIf="plantId; else initBlock" class="pie-charts-wrapper">
+        <div class="chart-canvas-wrapper">
+            <canvas id="canvasPie" class="chart-canvas">{{chart}}</canvas>
+        </div> 
+        <div class="chart-canvas-wrapper">
+            <canvas id="canvasPie2" class="chart-canvas">{{chart2}}</canvas>
+        </div>    
+        <div class="chart-canvas-wrapper">
+            <canvas id="canvasPie3" class="chart-canvas">{{chart3}}</canvas>
+        </div> 
+        <div class="chart-canvas-wrapper">
+            <canvas id="canvasPie4" class="chart-canvas">{{chart4}}</canvas>
+        </div> 
+    </div>
+</div>
+
+<ng-template #initBlock>
+    <div class="init-block">
+        <span class="green-text">Use the Map to view more details.</span>  
+        <div class="lds-facebook"><div></div><div></div><div></div></div>
+    </div>
+</ng-template>

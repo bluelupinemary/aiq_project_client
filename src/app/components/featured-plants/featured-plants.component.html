@@ -1,0 +1,13 @@
+<div class="container-fluid px-4 featured-main-wrapper">
+    <div class="featured-card-container d-flex">
+        <div class="card-wrapper col-lg-3 col-12" *ngFor="let plant of featuredPlants; let i=index;" >
+            <div class="featured-card">
+                <span class="title"> {{cardTitles[i]}} </span>
+                <span>{{plant['PNAME']}}</span>
+                <span>{{plant['PSTATABB']}}</span>
+                <span>{{plant['val']}}</span>
+            </div>
+        </div>
+        
+    </div>
+</div>

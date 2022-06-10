@@ -1,0 +1,30 @@
+.search-input{
+    background-color: #eee;
+    border-radius: 15px;
+    border: 1px solid #aaa;
+    padding: 0.5rem 1rem;
+    outline: none;
+    color: #272727;
+    /* width: 20rem; */
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  color: #777;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
