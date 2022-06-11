@@ -1,5 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 
+//Componet for showing map-related details such as legend map
+
 @Component({
   selector: 'app-mapdetails',
   templateUrl: './mapdetails.component.html',

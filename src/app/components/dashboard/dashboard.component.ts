@@ -1,7 +1,7 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit, Output } from '@angular/core';
-import { parse } from '@fortawesome/fontawesome-svg-core';
 import { PlantstateService } from 'src/app/services/plantstate.service';
+
+//component for the main dashboard feature of the page, main arrays, objects and functionalities are available here for other sub components
 
 @Component({
   selector: 'app-dashboard',

@@ -1,6 +1,8 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { PlantstateService } from 'src/app/services/plantstate.service';
 
+//component for the featured cards / top 5 power plants located at the bottom of the page
+
 @Component({
   selector: 'app-featured-plants',
   templateUrl: './featured-plants.component.html',

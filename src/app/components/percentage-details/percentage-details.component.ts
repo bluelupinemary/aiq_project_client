@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Chart , registerables} from 'chart.js';
 import { PlantstateService } from 'src/app/services/plantstate.service';
 
-
+//Component for the net generation detail for any marker/ plant selected in the map, creates the pie charts
 
 @Component({
   selector: 'app-percentage-details',

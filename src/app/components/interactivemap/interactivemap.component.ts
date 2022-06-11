@@ -14,6 +14,8 @@ import {Circle} from 'ol/geom';
 import Overlay from 'ol/Overlay';
 import {Control, defaults as defaultControls} from 'ol/control';
 
+//Component for the Interactive map feature of the page, filtered data are shown here for user accessibily of further data such as net generation absolute value and percentage charts and detailed table
+
 @Component({
   selector: 'app-interactivemap',
   templateUrl: './interactivemap.component.html',

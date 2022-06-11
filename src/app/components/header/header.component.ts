@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { PlantstateService } from 'src/app/services/plantstate.service';
 
+//Component for the header and form feature of the page; user can filter by state, by category and by top N power plants by filling the fields available here
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

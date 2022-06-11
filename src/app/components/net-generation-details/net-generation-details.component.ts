@@ -3,6 +3,8 @@ import { Chart , registerables} from 'chart.js';
 import { PlantstateService } from 'src/app/services/plantstate.service';
 
 
+//Component for the net generation detail for any marker/ plant selected in the maps, creates data in bar chart
+
 @Component({
   selector: 'app-net-generation-details',
   templateUrl: './net-generation-details.component.html',
