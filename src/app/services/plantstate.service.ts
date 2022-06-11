@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PlantstateService {
-  // private baseUrl = 'https://aiq-server.herokuapp.com/api/v1/states';
-  private baseUrl = 'http://localhost:8080/api/v1/states';
+  private baseUrl = 'https://aiq-server.herokuapp.com/api/v1/states';
+  // private baseUrl = 'http://localhost:8080/api/v1/states';
 
   constructor(private http:HttpClient) { }
 
