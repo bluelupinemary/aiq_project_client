@@ -11,7 +11,7 @@
             <th scope="col">Percent Generation</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="isShowTopRanking;">
             <tr *ngFor="let plant of plantsData; let i=index;" class="plant-row">
                 <th scope="row">{{ i+1 }}</th>
                 <td>{{plant['PNAME']}}</td>
@@ -20,9 +20,7 @@
                 <td>{{plant['val']}}</td>
                 <td>{{plant['percent'] }}</td>
             </tr>
-
           <tr>
-            
           </tr>
           
         </tbody>

@@ -23,6 +23,10 @@ input, select{
     font-weight: 600;
 }
 
+select.form-control {
+    -webkit-appearance: menulist;
+}
+
 .input-fields-wrapper{
     column-gap: 2rem;
     flex-direction: column;
@@ -45,6 +49,10 @@ input, select{
     transform:scale(1.035);
 }
 
+.top-n-title{
+    width: 40%;
+    font-weight: 600;
+}
 
 .top-n-input::placeholder{
     color: #ccc;
@@ -53,8 +61,14 @@ input, select{
 
 .reset-fields-btn{
     border-radius: 30px;
+    background-color: #dc3545;
+    color: #ffffff;
+    transition: all ease-in-out 0.2s;
 }
 
+.reset-fields-btn:hover{
+    transform: scale(1.1) rotate(90deg);
+}
 
 @media(min-width: 992px){
     .header-bar{

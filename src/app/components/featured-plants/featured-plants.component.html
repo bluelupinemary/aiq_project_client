@@ -1,11 +1,17 @@
 <div class="container-fluid px-4 featured-main-wrapper">
     <div class="featured-card-container d-flex">
-        <div class="card-wrapper col-lg-3 col-12" *ngFor="let plant of featuredPlants; let i=index;" >
+        <div class="card-wrapper col-lg-3 col-12" *ngFor="let plants of featuredPlants; let i=index;" >
             <div class="featured-card">
                 <span class="title"> {{cardTitles[i]}} </span>
-                <span>{{plant['PNAME']}}</span>
-                <span>{{plant['PSTATABB']}}</span>
-                <span>{{plant['val']}}</span>
+                <div class="icon-wrapper">
+                    <img src="/assets/power-plant-icon.svg" alt="image">
+                </div>
+                
+                <div *ngFor="let plant of plants; let j=index;" class="featured-card-content">
+                    <span>{{j}} - {{plant['PNAME']}}</span>
+                    <span>{{plant['PSTATABB']}}</span>
+                    <span>{{plant['val']}}</span>
+                </div> 
             </div>
         </div>
         

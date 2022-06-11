@@ -40,7 +40,7 @@ export class InteractivemapComponent implements OnInit {
     "HYDRO": "rgba(29, 0, 255, 0.75)",
     "COAL": "rgba(0, 0, 0, 0.75)",
     "OTHF": "rgba(0, 205, 255, 0.75)",
-    "BIOMASS": "rgba(0, 255, 8, 0.75)",
+    "BIOMASS": "rgba(127, 0, 255, 0.75)",
     "OFSL": "rgba(0, 255, 8, 0.75)",
     "SOLAR": "rgba(231, 255, 0, 0.75)",
     "NUCLEAR": "rgba(255, 109, 0, 0.75)",
@@ -55,8 +55,7 @@ export class InteractivemapComponent implements OnInit {
     if(this.isFiltered){
       if(this.selectedState!=='' && this.selectedState!==undefined) this.getStateLatLon();
       if(this.topN && this.topN > 0){
-        if(this.hasCategory) this.redrawMap();
-        else this.reInitMap();
+        this.reInitMap();
       }
       else{
         this.reInitMap();
@@ -243,10 +242,10 @@ export class InteractivemapComponent implements OnInit {
       if(hit){
         this.map.forEachFeatureAtPixel(pixel, (feature, layer) => {
           content.innerHTML = '<div class="popup-wrapper">'+
-          'Plant ID: <span class="plant-id">'+feature.get('id')+'</span><br/>'+
-          'Plant Name: <span class="plant-name">'+feature.get('name')+'</span><br/>'+
-          'Location: <span class="plant-state">'+feature.get('state')+'</span><br/>'+
-          'Category: <span class="plant-category">'+feature.get('category')+'</span>'+
+          'Plant ID: <span style="margin-left:1em;">'+feature.get('id')+'</span><br/>'+
+          'Plant Name: <span style="margin-left:1em;">'+feature.get('name')+'</span><br/>'+
+          'Location: <span style="margin-left:1em;">'+feature.get('state')+'</span><br/>'+
+          'Category: <span style="margin-left:1em;">'+feature.get('category')+'</span>'+
           '</div>';
           this.mapMarkerClick(feature.get('id'))
           this.map.getView().setCenter(coordinate);

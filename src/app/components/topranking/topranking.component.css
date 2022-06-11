@@ -4,7 +4,7 @@
     padding:1rem 2rem;
 }
 .generation-title{
-    margin-bottom: 1rem;
+    margin:1.25rem 0;
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td, 

@@ -68,7 +68,9 @@ export class DashboardComponent implements OnInit {
     })  
   }
 
-  getTopNPlants(n:any){
+
+  //functions related to getting top N plants
+  getTopNPlants(n:any,state:any,category:any){
     n = parseInt(n);
     if(n < this.topPlantsSorted.length){
       this.plants = this.topPlantsSorted.slice(0,n);
@@ -79,38 +81,45 @@ export class DashboardComponent implements OnInit {
   }
 
   getTopNPlantsByState(state:string, n:any){
-    this.plantstateService.getTopPlantsByNetGenerationByState(state, n).subscribe((plants)=>{
-      this.plants = plants;
+    const topNPlantsByState = this.topPlantsSorted.filter((item)=>{ return item['PSTATABB'] === state})
+    n = parseInt(n);
+    if(n < this.topPlantsSorted.length){
+      this.plants = topNPlantsByState.slice(0,n);
       this.isFiltered = true;
       this.hasState = true;
       this.topN = n;
-      this.isShowTopRanking = false;
-    })  
+      this.isShowTopRanking = true;
+    }
   }
 
   getTopNPlantsByCategory(category:string, n:any){
-    this.plantstateService.getTopPlantsByNetGenerationByCategory(category, n).subscribe((plants)=>{
-      this.plants = plants;
-      this.hasCategory = true;
+    const topNPlantsByCategory = this.topPlantsSorted.filter((item)=>{ return item['PLFUELCT'] === category})
+    n = parseInt(n);
+    if(n < this.topPlantsSorted.length){
+      this.plants = topNPlantsByCategory.slice(0,n);
       this.isFiltered = true;
+      this.hasState = false;
+      this.hasCategory = true;
       this.topN = n;
-      this.isShowTopRanking = false;
-    })  
+      this.isShowTopRanking = true;
+    }
   }
 
   getTopNPlantsByStateByCategory(state:string, category:string, n:any){
+    const topNPlantsByStateByCategory = this.topPlantsSorted.filter((item)=>{ return (item['PLFUELCT'] === category && item['PSTATABB'] === state)})
     n = parseInt(n);
-    this.plantstateService.getTopPlantsByNetGenerationByStateByCategory(state,category,n).subscribe((plants)=>{
-      this.plants = plants;
+    if(n < this.topPlantsSorted.length){
+      this.plants = topNPlantsByStateByCategory.slice(0,n);
       this.isFiltered = true;
       this.hasState = true;
+      this.hasCategory = true;
       this.topN = n;
-      this.isShowTopRanking = false;
-    })  
+      this.isShowTopRanking = true;
+    }
   }
 
 
-  //once header form is submitted
+  //once header form is submitted, get data for showing to the map
   onHeaderSubmitValues(formValues:any){
     if(formValues.topNForm!=='' && formValues.topNForm!==null){
       if(formValues.stateForm!=='' && formValues.stateForm!==null && formValues.stateForm!=='null'){
@@ -118,12 +127,13 @@ export class DashboardComponent implements OnInit {
           this.getTopNPlantsByStateByCategory(formValues.stateForm, formValues.categoryForm, formValues.topNForm);
         }else{
           this.getTopNPlantsByState(formValues.stateForm, formValues.topNForm);
+          // this.getTopNPlants(formValues);
         }
       }else{
         if(formValues.categoryForm!=='' && formValues.categoryForm!==null  && formValues.categoryForm!=='null'){
           this.getTopNPlantsByCategory(formValues.categoryForm, formValues.topNForm);
         }else{
-          this.getTopNPlants(formValues.topNForm);
+          this.getTopNPlants(formValues.topNForm,null,null);
         }
       }
     }else{
@@ -149,9 +159,11 @@ export class DashboardComponent implements OnInit {
     }else{
       this.selectedState = '';
     }
+
+    this.plantId = null;
   }
 
-
+  //for when a marker is clicked from the map
   showPlantDetails(plantId: any){
     if(plantId){
       this.plantId = plantId;

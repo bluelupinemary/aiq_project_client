@@ -7,6 +7,7 @@ import { Component, OnInit, Input,Output } from '@angular/core';
 })
 export class ToprankingComponent implements OnInit {
   @Input() plants : any;
+  @Input() isShowTopRanking:any;
   plantsData : any;
   title : string = 'Top N Plants Net Generation Details';
 

@@ -9,10 +9,10 @@ import { PlantstateService } from 'src/app/services/plantstate.service';
 export class FeaturedPlantsComponent implements OnInit {
   @Output() featuredPlants : any[] = [];
   cardTitles:any = [
-    "Top 1 Nuclear Plant",
-    "Top 1 Renewable Plant",
-    "Top 1 Non-Renewable Plant",
-    "Top 1 Non-Hydro Plant",
+    "Top 5 Nuclear Plants",
+    "Top 5 Renewable Plants",
+    "Top 5 Non-Renewable Plants",
+    "Top 5 Non-Hydro Plants",
   ]
 
   constructor(private plantstateService : PlantstateService) { }
@@ -23,8 +23,8 @@ export class FeaturedPlantsComponent implements OnInit {
   ngOnInit(): void {
     const categories = ['NUCLEAR','RENEWABLE','NONRENEWABLE','NONHYDRO'];
     categories.map((category)=>{
-      this.plantstateService.getTopPlantsByNetGenerationByCategory(category,1).subscribe((details)=>{
-        this.featuredPlants.push(details[category][0]);    
+      this.plantstateService.getTopPlantsByNetGenerationByCategory(category,5).subscribe((details)=>{
+        this.featuredPlants.push(details[category]);    
       })
     })
     

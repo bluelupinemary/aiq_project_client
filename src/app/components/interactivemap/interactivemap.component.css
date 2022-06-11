@@ -53,6 +53,7 @@
   }
   .ol-popup-closer:after {
     content: "✖";
+    color: red;
   }
 
   

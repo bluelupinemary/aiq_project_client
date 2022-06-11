@@ -9,8 +9,8 @@
   <div class="d-flex flex-column flex-lg-row justify-content-between mx-3 plant-details-wrapper">
     <div *ngIf="plants" class="col-12 col-lg-7">
         <app-interactivemap [isFiltered]="isFiltered" [hasState]="hasState" [selectedState]="selectedState" [hasCategory]="hasCategory" [topN]="topN" [plants]="plants" (onPlantMarkerClick)="showPlantDetails($event)"></app-interactivemap>
-        <div *ngIf="isShowTopRanking; else hideBlock">
-            <app-topranking [plants]="plants"></app-topranking>
+        <div>
+            <app-topranking [plants]="plants" [isShowTopRanking]="isShowTopRanking"></app-topranking>
         </div>
     </div>
     <div class="container-wrapper map-details col-12 col-lg-5">
